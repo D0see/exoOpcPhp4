@@ -2,7 +2,7 @@
     require 'header.php';
     require 'bdd.php';
 
-    $pgClient = connexion();
+    $pgClient = connexion($env);
 
     $allOeuvresQuery = 'Select * from oeuvre';
     $oeuvresStatement = $pgClient->prepare($allOeuvresQuery);
