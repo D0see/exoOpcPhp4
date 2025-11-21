@@ -1,6 +1,7 @@
 <?php
     require 'header.php';
     require 'bdd.php';
+    require 'env.php';
 
     $pgClient = connexion($env);
 
