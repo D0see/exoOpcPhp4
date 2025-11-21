@@ -1,6 +1,14 @@
 <?php
     require 'header.php';
-    require 'oeuvres.php';
+    require 'bdd.php';
+
+    $pgClient = connexion();
+
+    $allOeuvresQuery = 'Select * from oeuvre';
+    $oeuvresStatement = $pgClient->prepare($allOeuvresQuery);
+    $oeuvresStatement->execute();
+    $oeuvres = $oeuvresStatement->fetchAll();
+
 ?>
 <div id="liste-oeuvres">
     <?php foreach($oeuvres as $oeuvre): ?>
